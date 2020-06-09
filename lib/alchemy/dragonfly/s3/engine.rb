@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+module Alchemy
+  module Dragonfly
+    module S3
+      class Engine < ::Rails::Engine
+        engine_name "alchemy_dragonfly_s3"
+
+        config.after_initialize do
+          Alchemy::Picture.url_class = Alchemy::Picture::S3Url
+          Alchemy::PictureThumb.generator_class = Alchemy::Dragonfly::S3::CreatePictureThumb
+        end
+      end
+    end
+  end
+end
