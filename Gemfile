@@ -1,12 +1,14 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Declare your gem's dependencies in alchemy_s3.gemspec.
+# Declare your gem"s dependencies in alchemy_s3.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem 'alchemy_cms', github: 'AlchemyCMS/alchemy_cms'
+gem "alchemy_cms", github: "tvdeyen/alchemy_cms", branch: "remote-images"
+gem "alchemy-devise", "~> 4.5"
+gem "sqlite3", "~> 1.3"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
@@ -14,4 +16,4 @@ gem 'alchemy_cms', github: 'AlchemyCMS/alchemy_cms'
 # your gem to rubygems.org.
 
 # To use a debugger
-# gem 'byebug', group: [:development, :test]
+gem "pry-byebug", group: [:development, :test]
