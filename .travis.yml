@@ -1,0 +1,8 @@
+language: ruby
+dist: bionic
+sudo: false
+cache:
+  bundler: true
+rvm:
+  - 2.6
+script: bundle exec rake
