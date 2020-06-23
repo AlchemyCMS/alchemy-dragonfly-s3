@@ -4,6 +4,12 @@
 
 Provides a `Alchemy::Picture.url_class` and `Alchemy::PictureThumb.generator_class` for Alchemy pictures stored on Amazon AWS S3.
 
+## Alchemy Version
+
+This branch works with Alchemy 5.1 only.
+
+- For a Alchemy 3 compatible version use the `alchemy-3` branch.
+
 ## Installation
 
 Add this line to your application's Gemfile:
