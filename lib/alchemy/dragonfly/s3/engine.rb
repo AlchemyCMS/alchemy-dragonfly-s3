@@ -6,9 +6,9 @@ module Alchemy
       class Engine < ::Rails::Engine
         engine_name "alchemy_dragonfly_s3"
 
-        config.after_initialize do
-          Alchemy::Picture.url_class = Alchemy::Picture::S3Url
-          Alchemy::PictureThumb.generator_class = Alchemy::Dragonfly::S3::CreatePictureThumb
+        config.to_prepare do
+          file = "alchemy/picture_monkey_patch"
+          Rails.application.config.cache_classes ? require(file) : load(file)
         end
       end
     end
