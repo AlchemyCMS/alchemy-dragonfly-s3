@@ -3,7 +3,7 @@
 module Alchemy
   module Dragonfly
     module S3
-      VERSION = "0.1.0"
+      VERSION = "3.6.0"
     end
   end
 end
