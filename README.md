@@ -1,21 +1,21 @@
-[![Build Status](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3.svg?branch=master)](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3)
+[![Build Status](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3.svg?branch=alchemy-3)](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3)
 
 # AlchemyCMS AWS S3
 
-Provides a `Alchemy::Picture.url_class` and `Alchemy::PictureThumb.generator_class` for Alchemy pictures stored on Amazon AWS S3.
+Adds support for rendered Alchemy thumbnails stored on Amazon AWS S3.
+
+## Alchemy Version
+
+This branch works with Alchemy 3.6 only.
+
+- For a Alchemy 5 compatible version use the `master` branch.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'alchemy-dragonfly-s3', github: 'AlchemyCMS/alchemy-dragonfly-s3'
-```
-
-For now you also need a special AlchemyCMS branch
-
-```ruby
-gem 'alchemy_cms', github: 'tvdeyen/alchemy_cms', branch: 'remote-images'
+gem 'alchemy-dragonfly-s3', github: 'AlchemyCMS/alchemy-dragonfly-s3', branch: 'alchemy-3'
 ```
 
 And then execute:
@@ -24,10 +24,10 @@ And then execute:
 $ bundle install
 ```
 
-Install the picture thumbs migration from Alchemy 5.1
+Install the picture thumbs migration
 
 ```
-$ bin/rake alchemy:install:migrations
+$ bin/rake alchemy_dragonfly_s3:install:migrations
 $ bin/rake db:migrate
 ```
 
