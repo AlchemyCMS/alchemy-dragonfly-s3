@@ -32,7 +32,6 @@ task :test_setup do
     system <<-SETUP.strip_heredoc
       export RAILS_ENV=test && \
       bin/rake alchemy:install:migrations
-      bin/rake acts_as_taggable_on_engine:install:migrations
       bin/rake alchemy_dragonfly_s3:install:migrations
       bin/rails g alchemy:install --skip --skip-demo-files
       bin/rails g alchemy:devise:install --force

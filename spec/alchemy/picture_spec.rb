@@ -5,11 +5,11 @@ require "alchemy/test_support/factories/picture_factory"
 
 RSpec.describe Alchemy::Picture do
   let(:image) { File.new(File.expand_path("../fixtures/image.png", __dir__)) }
-  let(:picture) { FactoryGirl.create(:alchemy_picture, image_file: image) }
+  let(:picture) { FactoryBot.create(:alchemy_picture, image_file: image) }
 
   it "generates thumbnails after create" do
     expect {
-      FactoryGirl.create(:alchemy_picture)
+      FactoryBot.create(:alchemy_picture)
     }.to change { Alchemy::PictureThumb.count }.by(3)
   end
 

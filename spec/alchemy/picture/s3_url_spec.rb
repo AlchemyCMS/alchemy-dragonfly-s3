@@ -5,7 +5,7 @@ require "alchemy/test_support/factories/picture_factory"
 
 RSpec.describe Alchemy::Picture::S3Url do
   let(:image) { File.new(File.expand_path("../../fixtures/image.png", __dir__)) }
-  let(:picture) { FactoryGirl.create(:alchemy_picture, image_file: image) }
+  let(:picture) { FactoryBot.create(:alchemy_picture, image_file: image) }
   let(:variant) { Alchemy::PictureVariant.new(picture) }
   let(:params) { {} }
 
