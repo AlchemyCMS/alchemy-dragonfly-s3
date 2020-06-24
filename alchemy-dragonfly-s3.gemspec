@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
 
   s.files = Dir["lib/**/*", "MIT-LICENSE", "README.md"]
 
-  s.add_dependency "alchemy_cms", ["~> 3.6"]
+  s.add_dependency "alchemy_cms", ["~> 4.0"]
   s.add_dependency "dragonfly-s3_data_store", "~> 1.3"
 
   s.add_development_dependency "rspec-rails", "~> 4.0"
-  s.add_development_dependency "factory_girl_rails", "~> 4.5"
+  s.add_development_dependency "factory_bot_rails", "~> 5"
   s.add_development_dependency "simplecov", "~> 0.17"
 end

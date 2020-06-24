@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Alchemy
-  class Picture < ActiveRecord::Base
+  class Picture < BaseRecord
     class S3Url
       attr_reader :variant
 

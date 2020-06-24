@@ -1,5 +1,5 @@
 module Alchemy
-  class PictureThumb < ActiveRecord::Base
+  class PictureThumb < BaseRecord
     # Stores the render result of a Alchemy::PictureVariant
     # in the Dragonfly S3 datastore
     #

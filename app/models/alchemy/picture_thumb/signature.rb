@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Alchemy
-  class PictureThumb < ActiveRecord::Base
+  class PictureThumb < BaseRecord
     class Signature
       # Returns a unique image process signature
       #

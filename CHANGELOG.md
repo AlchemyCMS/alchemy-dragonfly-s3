@@ -1,4 +1,3 @@
-## v3.6.1
+## v4.0.0
 
-- Fix picture_thumbs migration for Rails 4.2
-- Fix picture_monkey_patch loading
+- Alchemy 4 support

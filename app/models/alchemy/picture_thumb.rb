@@ -3,7 +3,7 @@
 module Alchemy
   # The persisted version of a rendered picture variant
   #
-  class PictureThumb < ActiveRecord::Base
+  class PictureThumb < BaseRecord
     belongs_to :picture, class_name: "Alchemy::Picture"
 
     validates :signature, presence: true
