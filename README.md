@@ -8,6 +8,7 @@ Provides a `Alchemy::Picture.url_class` and `Alchemy::PictureThumb.generator_cla
 
 This branch works with Alchemy 5.1 only.
 
+- For a Alchemy 5.0 compatible version use the `alchemy-5` branch.
 - For a Alchemy 4 compatible version use the `alchemy-4` branch.
 - For a Alchemy 3 compatible version use the `alchemy-3` branch.
 
