@@ -6,10 +6,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # development dependencies will be added by default to the :development group.
 gemspec
 
-ENV.fetch("ALCHEMY_BRANCH", "4.6-stable").tap do |branch|
-  gem "alchemy_cms", github: "AlchemyCMS/alchemy_cms", branch: branch
-  gem "alchemy-devise", github: "AlchemyCMS/alchemy-devise", branch: branch
-end
+gem "alchemy_cms", github: "AlchemyCMS/alchemy_cms", branch: "master"
+gem "alchemy-devise", github: "AlchemyCMS/alchemy-devise", branch: "master"
 gem "sqlite3", "~> 1.3"
 gem "sassc-rails", "~> 2.1"
 

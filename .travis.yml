@@ -5,11 +5,4 @@ cache:
   bundler: true
 rvm:
   - 2.6
-env:
-  matrix:
-    - ALCHEMY_BRANCH=4.4-stable
-    - ALCHEMY_BRANCH=4.5-stable
-    - ALCHEMY_BRANCH=4.6-stable
-matrix:
-  fast_finish: true
 script: bundle exec rake
