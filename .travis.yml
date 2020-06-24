@@ -5,6 +5,11 @@ cache:
   bundler: true
 rvm:
   - 2.6
-before_script:
-  - gem install -N bundler:1.17.3
+env:
+  matrix:
+    - ALCHEMY_BRANCH=4.4-stable
+    - ALCHEMY_BRANCH=4.5-stable
+    - ALCHEMY_BRANCH=4.6-stable
+matrix:
+  fast_finish: true
 script: bundle exec rake
