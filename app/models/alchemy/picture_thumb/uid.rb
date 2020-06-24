@@ -11,8 +11,7 @@ module Alchemy
       # @return [String]
       def self.call(signature, variant)
         picture = variant.picture
-        attachment = variant.image
-        filename = attachment.name || "image"
+        filename = variant.image_file_name || "image"
 
         "pictures/#{picture.id}/#{signature}/#{filename.gsub(/[^\w.]+/, "_")}"
       end
