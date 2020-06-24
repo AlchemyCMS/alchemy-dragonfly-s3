@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3.svg?branch=alchemy-3)](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3)
+[![Build Status](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3.svg?branch=alchemy-4)](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3)
 
 # AlchemyCMS AWS S3
 
@@ -6,16 +6,17 @@ Adds support for rendered Alchemy thumbnails stored on Amazon AWS S3.
 
 ## Alchemy Version
 
-This branch works with Alchemy 3.6 only.
+This branch works with Alchemy 4 only.
 
 - For a Alchemy 5 compatible version use the `master` branch.
+- For a Alchemy 3.6 compatible version use the `alchemy-3` branch.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'alchemy-dragonfly-s3', github: 'AlchemyCMS/alchemy-dragonfly-s3', branch: 'alchemy-3'
+gem 'alchemy-dragonfly-s3', github: 'AlchemyCMS/alchemy-dragonfly-s3', branch: 'alchemy-4'
 ```
 
 And then execute:
