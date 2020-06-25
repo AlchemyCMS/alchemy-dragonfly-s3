@@ -8,6 +8,5 @@ class CreateAlchemyPictureThumbs < ActiveRecord::Migration[5.0]
       t.text :uid, null: false
     end
     add_index :alchemy_picture_thumbs, :signature, unique: true
-    add_index :alchemy_picture_thumbs, :uid, unique: true
   end
 end
