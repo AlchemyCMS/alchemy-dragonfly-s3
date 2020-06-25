@@ -9,6 +9,5 @@ class CreateAlchemyPictureThumbs < ActiveRecord::Migration
     end
     add_foreign_key :alchemy_picture_thumbs, :alchemy_pictures, column: :picture_id
     add_index :alchemy_picture_thumbs, :signature, unique: true
-    add_index :alchemy_picture_thumbs, :uid, unique: true
   end
 end
