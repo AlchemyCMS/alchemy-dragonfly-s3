@@ -1,3 +1,9 @@
-## v4.0.0
+## v5.0.1
 
-- Alchemy 4 support
+- Ensure to create new thumbs on in memory picture
+- Add task to generate mssing thumbnails
+- Use persisted filename instead of remote file name
+
+## v5.0.0
+
+- Alchemy 5.0 support
