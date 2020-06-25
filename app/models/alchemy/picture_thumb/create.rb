@@ -7,7 +7,7 @@ module Alchemy
       def self.call(variant, signature, uid)
         image = variant.image
         image.store(path: uid)
-        Alchemy::PictureThumb.create!(
+        variant.picture.thumbs.create!(
           picture: variant.picture,
           signature: signature,
           uid: uid,
