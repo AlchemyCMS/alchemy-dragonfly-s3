@@ -12,8 +12,10 @@ module Alchemy
       def self.call(signature, variant)
         picture = variant.picture
         filename = variant.image_file_name || "image"
+        name = File.basename(filename, ".*").gsub(/[^\w.]+/, "_")
+        ext = variant.render_format
 
-        "pictures/#{picture.id}/#{signature}/#{filename.gsub(/[^\w.]+/, "_")}"
+        "pictures/#{picture.id}/#{signature}/#{name}.#{ext}"
       end
     end
   end
