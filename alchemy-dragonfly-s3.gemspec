@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "alchemy_cms", [">= 5.0.0.beta1", "< 5.1"]
   s.add_dependency "dragonfly-s3_data_store", "~> 1.3"
 
+  s.add_development_dependency "capybara", "~> 3.0"
   s.add_development_dependency "rspec-rails", "~> 4.0"
   s.add_development_dependency "factory_bot_rails", "~> 5"
   s.add_development_dependency "simplecov", "~> 0.17"
