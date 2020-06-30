@@ -1,0 +1,55 @@
+<div class="resource_info">
+  <div class="value">
+    <label>
+      <%= render_icon @attachment.icon_css_class %>
+    </label>
+    <p><%= @attachment.file_name %></p>
+  </div>
+  <div class="value with-icon">
+    <label><%= Alchemy::Attachment.human_attribute_name(:url) %></label>
+    <p><%= @attachment.url %></p>
+    <a data-clipboard-text="<%= @attachment.url %>" class="icon_button--right">
+      <%= render_icon('clipboard full') %>
+    </a>
+  </div>
+  <div class="value with-icon">
+    <label><%= Alchemy::Attachment.human_attribute_name(:download_url) %></label>
+    <p><%= @attachment.url %></p>
+    <a data-clipboard-text="<%= @attachment.url %>" class="icon_button--right">
+      <%= render_icon('clipboard full') %>
+    </a>
+  </div>
+</div>
+
+<% case @attachment.icon_css_class %>
+<% when "image" %>
+<div class="attachment_preview_container image-preview">
+  <%= image_tag(@attachment.url, class: "full_width") %>
+</div>
+<% when "audio" %>
+<div class="attachment_preview_container player-preview">
+  <%= audio_tag(@attachment.url, preload: "none", controls: true, class: "full_width") %>
+</div>
+<% when "video" %>
+<div class="attachment_preview_container player-preview">
+  <%= video_tag(@attachment.url, preload: "metadata", controls: true, class: "full_width") %>
+</div>
+<% when "archive", "file" %>
+<% else %>
+<iframe src="<%= @attachment.url %>" frameborder=0 class="full-iframe">
+  Your browser does not support frames.
+</iframe>
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    var clipboard = new Clipboard('.icon_button--right');
+    clipboard.on('success', function(e) {
+      Alchemy.growl('<%= Alchemy.t("Copied to clipboard") %>');
+      e.clearSelection();
+    });
+    Alchemy.currentDialog().dialog.on('DialogClose.Alchemy', function() {
+      clipboard.destroy();
+    });
+  });
+</script>

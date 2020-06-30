@@ -7,8 +7,13 @@ module Alchemy
         engine_name "alchemy_dragonfly_s3"
 
         config.to_prepare do
-          file = Alchemy::Dragonfly::S3::Engine.root.join("lib", "alchemy", "picture_monkey_patch.rb")
-          Rails.application.config.cache_classes ? require(file) : load(file)
+          files = [
+            "attachment_monkey_patch.rb",
+            "picture_monkey_patch.rb",
+          ].each do |filename|
+            file = Alchemy::Dragonfly::S3::Engine.root.join("lib", "alchemy", filename)
+            Rails.application.config.cache_classes ? require(file) : load(file)
+          end
         end
       end
     end
