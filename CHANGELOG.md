@@ -1,3 +1,7 @@
+## v5.1.2
+
+- Add support for file attachments stored on S3
+
 ## v5.1.1
 
 - Ensure to create new thumbs on in memory picture
