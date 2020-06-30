@@ -2,7 +2,7 @@
 
 # AlchemyCMS AWS S3
 
-Provides a `Alchemy::Picture.url_class` and `Alchemy::PictureThumb.generator_class` for Alchemy pictures stored on Amazon AWS S3.
+Provides classes for storing Alchemy pictures and file attachments on Amazon AWS S3.
 
 ## Alchemy Version
 
@@ -48,8 +48,6 @@ Configure a S3 datastore for Dragonfly
 
 require "dragonfly/s3_data_store"
 
-...
-
 Dragonfly.app(:alchemy_pictures).configure do
   plugin :imagemagick
   plugin :svg
@@ -61,7 +59,13 @@ Dragonfly.app(:alchemy_pictures).configure do
     region: ENV.fetch("ALCHEMY_S3_REGION")
 end
 
-...
+Dragonfly.app(:alchemy_attachments).configure do
+  datastore :s3,
+    bucket_name: ENV.fetch("ALCHEMY_S3_BUCKET_NAME"),
+    access_key_id: ENV.fetch("ALCHEMY_S3_ACCESS_KEY_ID"),
+    secret_access_key: ENV.fetch("ALCHEMY_S3_SECRET_ACCESS_KEY"),
+    region: ENV.fetch("ALCHEMY_S3_REGION")
+end
 ```
 
 ## License
