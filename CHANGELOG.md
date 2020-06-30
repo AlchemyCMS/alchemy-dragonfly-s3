@@ -1,3 +1,9 @@
+## v3.6.3
+
+- Add support for file attachments stored on S3
+- Ensure the thumbnail uid has the rendered format
+- Do not create a unique index on uid column
+
 ## v3.6.2
 
 - Ensure to create new thumbs on in memory picture
