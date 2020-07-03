@@ -191,21 +191,43 @@ RSpec.describe Alchemy::PictureVariant do
       { format: "jpg" }
     end
 
-    it "sets the default quality" do
-      step = subject.steps[0]
-      expect(step.name).to eq(:encode)
-      expect(step.arguments).to eq(["jpg", "-quality 85"])
-    end
-
-    context "and quality is passed" do
-      let(:options) do
-        { format: "jpg", quality: "30" }
-      end
-
-      it "sets the quality" do
+    context "and the image file format is not JPG" do
+      it "sets the default quality" do
         step = subject.steps[0]
         expect(step.name).to eq(:encode)
-        expect(step.arguments).to eq(["jpg", "-quality 30"])
+        expect(step.arguments).to eq(["jpg", "-quality 85"])
+      end
+
+      context "and quality is passed" do
+        let(:options) do
+          { format: "jpg", quality: "30" }
+        end
+
+        it "sets the quality" do
+          step = subject.steps[0]
+          expect(step.name).to eq(:encode)
+          expect(step.arguments).to eq(["jpg", "-quality 30"])
+        end
+      end
+    end
+
+    context "and image has jpg format" do
+      let(:alchemy_picture) do
+        FactoryBot.build_stubbed(:alchemy_picture, image_file: image_file, image_file_format: "jpg")
+      end
+
+      it "does not convert the picture format" do
+        expect(subject).to_not respond_to(:steps)
+      end
+    end
+
+    context "and image has jpeg format" do
+      let(:alchemy_picture) do
+        FactoryBot.build_stubbed(:alchemy_picture, image_file: image_file, image_file_format: "jpeg")
+      end
+
+      it "does not convert the picture format" do
+        expect(subject).to_not respond_to(:steps)
       end
     end
   end
