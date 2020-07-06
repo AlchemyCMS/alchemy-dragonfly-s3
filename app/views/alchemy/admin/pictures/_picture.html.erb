@@ -1,0 +1,53 @@
+<div class="picture_thumbnail <%= @size %>" id="picture_<%= picture.id %>" name="<%= picture.name %>">
+  <span class="picture_tool select">
+    <%= check_box_tag "picture_ids[]", picture.id %>
+  </span>
+  <% if picture.deletable? && can?(:destroy, picture) %>
+  <span class="picture_tool delete">
+    <%= link_to_confirm_dialog(
+      "",
+      Alchemy.t(:confirm_to_delete_image_from_server),
+      alchemy.admin_picture_path(
+        id: picture,
+        q: params[:q],
+        page: params[:page],
+        tagged_with: params[:tagged_with],
+        size: params[:size],
+        filter: params[:filter]
+      ),
+      {
+        title: Alchemy.t('Delete image')
+      }
+    ) -%>
+  </span>
+  <% end %>
+  <% image = image_tag(
+    picture.url(size: preview_size(@size), flatten: true) || "alchemy/missing-image.svg",
+    alt: picture.name,
+    title: Alchemy.t(:zoom_image)
+  ) %>
+  <% if can?(:edit, picture) %>
+    <%= link_to(
+      image,
+      alchemy.admin_picture_path(
+        id: picture,
+        q: params[:q],
+        page: params[:page],
+        tagged_with: params[:tagged_with],
+        size: params[:size],
+        filter: params[:filter]
+      ),
+      class: 'thumbnail_background'
+    ) %>
+  <% else %>
+    <%= image %>
+  <% end %>
+  <span class="picture_name" title="<%= picture.name %>">
+    <%= picture.name %>
+  </span>
+  <div class="picture_tags">
+  <% picture.tag_list.each do |tag| %>
+    <span class="tag"><%= tag %></span>
+  <% end %>
+  </div>
+</div>

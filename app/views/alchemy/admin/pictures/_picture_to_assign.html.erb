@@ -1,0 +1,18 @@
+<div class="picture_thumbnail assign_image_list_detail <%= size.blank? ? 'medium' : size %>" name="<%= picture_to_assign.name %>" id="picture_to_assign_<%= picture_to_assign.id %>">
+  <% action_url = create_or_assign_url(picture_to_assign, @options.to_json) %>
+  <%= link_to(
+    image_tag(
+      picture_to_assign.url(size: preview_size(size), flatten: true) || "alchemy/missing-image.svg",
+      alt: picture_to_assign.name
+    ),
+    action_url,
+    remote: true,
+    onclick: '$(self).attr("href", "#").off("click"); return false',
+    method: @content.blank? ? 'post' : 'put',
+    title: Alchemy.t(:assign_image),
+    class: 'thumbnail_background'
+  ) %>
+  <div class="picture_name" title="<%= picture_to_assign.name %>">
+    <%= picture_to_assign.name %>
+  </div>
+</div>
