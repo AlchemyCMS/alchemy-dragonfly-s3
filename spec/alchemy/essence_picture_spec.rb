@@ -34,4 +34,19 @@ RSpec.describe Alchemy::EssencePicture do
       end
     end
   end
+
+  describe "#allow_image_cropping?" do
+    subject { essence_picture.allow_image_cropping? }
+
+    context "if picture.image_file is nil" do
+      let(:picture) { Alchemy::Picture.new(image_file_width: "100", image_file_height: "100") }
+
+      before do
+        expect(content).to receive(:settings).at_least(:once) { { crop: true, size: "10x10" } }
+        expect(picture).to receive(:image_file) { nil }
+      end
+
+      it { is_expected.to be(false) }
+    end
+  end
 end
