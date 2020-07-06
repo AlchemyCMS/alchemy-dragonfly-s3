@@ -1,0 +1,43 @@
+<div class="zoomed-picture-background">
+  <%= image_tag @picture.url(format: @picture.image_file_format) || "alchemy/missing-image.svg" %>
+</div>
+
+<div class="picture-overlay-navigation">
+  <% if @previous %>
+    <%= link_to alchemy.admin_picture_path(
+        id: @previous,
+        q: search_filter_params[:q],
+        page: params[:page],
+        tagged_with: search_filter_params[:tagged_with],
+        size: params[:size],
+        filter: search_filter_params[:filter]
+      ),
+      class: "previous-picture",
+      remote: true do %>
+      <i class="icon fas fa-angle-left fa-fw"></i>
+    <% end %>
+  <% end %>
+  <% if @next %>
+    <%= link_to alchemy.admin_picture_path(
+        id: @next,
+        q: search_filter_params[:q],
+        page: params[:page],
+        tagged_with: search_filter_params[:tagged_with],
+        size: params[:size],
+        filter: search_filter_params[:filter]
+      ),
+      class: "next-picture",
+      remote: true do %>
+      <i class="icon fas fa-angle-right fa-fw"></i>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="picture-details-overlay">
+  <%= render 'form' %>
+  <%= render 'infos' %>
+</div>
+
+<div class="picture-overlay-handle">
+  <i class="icon fas fa-angle-double-right fa-fw"></i>
+</div>
