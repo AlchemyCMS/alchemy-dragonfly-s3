@@ -19,7 +19,7 @@ module Alchemy
       #
       # @see Picture::THUMBNAIL_SIZES
       def generate_thumbs!(picture)
-        Alchemy::Picture::THUMBNAIL_SIZES.values.each do |size|
+        Alchemy::Picture::THUMBNAIL_SIZES.values.map do |size|
           variant = Alchemy::PictureVariant.new(picture, {
             size: size,
             flatten: true,
@@ -30,6 +30,7 @@ module Alchemy
 
           uid = Alchemy::PictureThumb::Uid.call(signature, variant)
           Alchemy::PictureThumb::Create.call(variant, signature, uid)
+          uid
         end
       end
     end
