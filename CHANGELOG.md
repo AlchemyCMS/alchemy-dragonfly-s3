@@ -1,3 +1,7 @@
+## v5.0.4
+
+- Update the picture_to_assign partial
+
 ## v5.0.3
 
 - Add second task to generate EssencePicture thumbails
