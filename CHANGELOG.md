@@ -1,3 +1,11 @@
+## v5.0.3
+
+- Add second task to generate EssencePicture thumbails
+- Always show original image as zoomed image
+- Do not enable image cropper if file is missing
+- Show missing image for urls returning nil
+- Do not convert JPEG images into JPG
+
 ## v5.0.2
 
 - Add support for file attachments stored on S3
