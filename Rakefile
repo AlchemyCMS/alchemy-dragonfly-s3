@@ -31,8 +31,7 @@ task :test_setup do
     require "active_support/core_ext/string"
     system <<-SETUP.strip_heredoc
       export RAILS_ENV=test && \
-      bin/rake alchemy:install:migrations
-      bin/rails g alchemy:install --skip --skip-demo-files
+      bin/rails g alchemy:install --skip --skip-demo-files --auto-accept
       bin/rails g alchemy:devise:install --force
     SETUP
     exit($?.exitstatus) unless $?.success?

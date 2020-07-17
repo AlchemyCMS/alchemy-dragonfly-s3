@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem "alchemy_cms", github: "tvdeyen/alchemy_cms", branch: "remote-images"
+gem "alchemy_cms", github: "AlchemyCMS/alchemy_cms", branch: "master"
 gem "alchemy-devise", "~> 4.5"
 gem "sqlite3", "~> 1.3"
 
