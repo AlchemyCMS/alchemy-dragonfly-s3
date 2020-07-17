@@ -1,3 +1,7 @@
+## v5.1.4
+
+- Include necessary files in gem package
+
 ## v5.1.3
 
 - Use Alchemy 5.1.0.alpha
