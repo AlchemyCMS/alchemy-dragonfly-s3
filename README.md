@@ -20,11 +20,13 @@ Add this line to your application's Gemfile:
 gem 'alchemy-dragonfly-s3', github: 'AlchemyCMS/alchemy-dragonfly-s3'
 ```
 
-For now you also need a special AlchemyCMS branch
+For now you also need the master branch of AlchemyCMS*
 
 ```ruby
-gem 'alchemy_cms', github: 'tvdeyen/alchemy_cms', branch: 'remote-images'
+gem 'alchemy_cms', github: 'AlchemyCMS/alchemy_cms', branch: 'master'
 ```
+
+*only necessary until Alchemy 5.1 has been released.
 
 And then execute:
 
