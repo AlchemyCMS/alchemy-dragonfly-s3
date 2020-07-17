@@ -1,3 +1,7 @@
+## v5.0.5
+
+- Include necessary files in gem package
+
 ## v5.0.4
 
 - Update the picture_to_assign partial
