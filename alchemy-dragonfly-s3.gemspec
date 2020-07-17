@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.description = "AlchemyCMS Integration for the Dragonfly S3 datastore."
   s.license = "MIT"
 
-  s.files = Dir["lib/**/*", "MIT-LICENSE", "README.md"]
+  s.files = Dir["app/**/*", "lib/**/*", "MIT-LICENSE", "README.md"]
 
   s.add_dependency "alchemy_cms", [">= 5.1.0.alpha", "< 6"]
   s.add_dependency "dragonfly-s3_data_store", "~> 1.3"
