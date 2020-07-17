@@ -1,3 +1,7 @@
+## v3.6.5
+
+- Include necessary files in gem package
+
 ## v3.6.4
 
 - Add second task to generate EssencePicture thumbails
