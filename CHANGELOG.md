@@ -1,3 +1,8 @@
+## v4.0.5
+
+- Do not convert JPG images into JPEG
+- Prevent db race conditions while creating thumbs
+
 ## v4.0.4
 
 - Include necessary files in gem package
