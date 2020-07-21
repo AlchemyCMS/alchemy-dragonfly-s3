@@ -1,3 +1,8 @@
+## v3.6.6
+
+- Do not convert JPG images into JPEG
+- Prevent db race conditions while creating thumbs
+
 ## v3.6.5
 
 - Include necessary files in gem package
