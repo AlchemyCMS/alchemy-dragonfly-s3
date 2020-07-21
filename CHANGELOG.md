@@ -1,3 +1,7 @@
+## v5.1.5
+
+- Prevent db race conditions while creating thumbs
+
 ## v5.1.4
 
 - Include necessary files in gem package
