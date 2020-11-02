@@ -20,10 +20,10 @@ Add this line to your application's Gemfile:
 gem 'alchemy-dragonfly-s3', github: 'AlchemyCMS/alchemy-dragonfly-s3'
 ```
 
-For now you also need the master branch of AlchemyCMS*
+For now you also need the main branch of AlchemyCMS*
 
 ```ruby
-gem 'alchemy_cms', github: 'AlchemyCMS/alchemy_cms', branch: 'master'
+gem 'alchemy_cms', github: 'AlchemyCMS/alchemy_cms', branch: 'main'
 ```
 
 *only necessary until Alchemy 5.1 has been released.
