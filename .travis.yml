@@ -5,4 +5,5 @@ cache:
   bundler: true
 rvm:
   - 2.6
+before_script: nvm use 12
 script: bundle exec rake
