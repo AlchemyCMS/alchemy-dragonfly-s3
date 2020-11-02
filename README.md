@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3.svg?branch=master)](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3)
+[![Build Status](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3.svg?branch=main)](https://travis-ci.com/AlchemyCMS/alchemy-dragonfly-s3)
 
 # AlchemyCMS AWS S3
 
