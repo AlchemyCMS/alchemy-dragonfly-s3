@@ -7,7 +7,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 gem "alchemy_cms", github: "AlchemyCMS/alchemy_cms", branch: "main"
-gem "alchemy-devise", "~> 4.5"
+gem "alchemy-devise", github: "AlchemyCMS/alchemy-devise", branch: "main"
 gem "sqlite3", "~> 1.3"
 
 # Declare any dependencies that are still in development here instead of in
