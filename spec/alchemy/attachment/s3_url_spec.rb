@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-require "alchemy/test_support/factories/attachment_factory"
 
 RSpec.describe Alchemy::Attachment::S3Url do
   let(:attachment) { FactoryBot.create(:alchemy_attachment) }

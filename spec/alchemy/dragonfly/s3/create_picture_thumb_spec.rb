@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-require "alchemy/test_support/factories/picture_factory"
 
 RSpec.describe Alchemy::Dragonfly::S3::CreatePictureThumb do
   let(:image) { File.new(File.expand_path("../../../fixtures/image.png", __dir__)) }
