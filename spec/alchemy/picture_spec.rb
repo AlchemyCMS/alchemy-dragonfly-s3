@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "rails_helper"
-require "alchemy/test_support/factories/picture_factory"
 
 RSpec.describe Alchemy::Picture do
   describe "#url" do
