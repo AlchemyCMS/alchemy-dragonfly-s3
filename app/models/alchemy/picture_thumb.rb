@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_dependency "alchemy/base_record"
+
 module Alchemy
   # The persisted version of a rendered picture variant
   #

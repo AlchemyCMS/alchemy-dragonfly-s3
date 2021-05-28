@@ -1,41 +1,39 @@
 # frozen_string_literal: true
 
-module Alchemy
-  class Picture < BaseRecord
-    class S3Url
-      attr_reader :variant
+require_dependency "alchemy/picture"
 
-      # @param [Alchemy::PictureVariant]
-      #
-      def initialize(variant)
-        raise ArgumentError, "Variant missing!" if variant.nil?
+class Alchemy::Picture::S3Url
+  attr_reader :variant
 
-        @variant = variant
-      end
+  # @param [Alchemy::PictureVariant]
+  #
+  def initialize(variant)
+    raise ArgumentError, "Variant missing!" if variant.nil?
 
-      def call(*)
-        return variant.image.remote_url unless processible_image?
+    @variant = variant
+  end
 
-        ::Dragonfly.app(:alchemy_pictures).remote_url_for(uid)
-      end
+  def call(*)
+    return variant.image.remote_url unless processible_image?
 
-      private
+    ::Dragonfly.app(:alchemy_pictures).remote_url_for(uid)
+  end
 
-      def processible_image?
-        variant.image.is_a?(::Dragonfly::Job)
-      end
+  private
 
-      def uid
-        signature = PictureThumb::Signature.call(variant)
-        thumb = variant.picture.thumbs.detect { |t| t.signature == signature }
-        if thumb
-          uid = thumb.uid
-        else
-          uid = PictureThumb::Uid.call(signature, variant)
-          PictureThumb::Create.call(variant, signature, uid)
-        end
-        uid
-      end
+  def processible_image?
+    variant.image.is_a?(::Dragonfly::Job)
+  end
+
+  def uid
+    signature = Alchemy::PictureThumb::Signature.call(variant)
+    thumb = variant.picture.thumbs.detect { |t| t.signature == signature }
+    if thumb
+      uid = thumb.uid
+    else
+      uid = Alchemy::PictureThumb::Uid.call(signature, variant)
+      Alchemy::PictureThumb::Create.call(variant, signature, uid)
     end
+    uid
   end
 end
