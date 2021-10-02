@@ -6,7 +6,7 @@ Provides classes for storing Alchemy pictures and file attachments on Amazon AWS
 
 ## Alchemy Version
 
-This branch works with Alchemy 5.1 only.
+This branch works with Alchemy 5.1 and above.
 
 - For a Alchemy 5.0 compatible version use the `alchemy-5` branch.
 - For a Alchemy 4 compatible version use the `alchemy-4` branch.
