@@ -20,25 +20,10 @@ Add this line to your application's Gemfile:
 gem 'alchemy-dragonfly-s3', github: 'AlchemyCMS/alchemy-dragonfly-s3'
 ```
 
-For now you also need the main branch of AlchemyCMS*
-
-```ruby
-gem 'alchemy_cms', github: 'AlchemyCMS/alchemy_cms', branch: 'main'
-```
-
-*only necessary until Alchemy 5.1 has been released.
-
 And then execute:
 
 ```
 $ bundle install
-```
-
-Install the picture thumbs migration from Alchemy 5.1
-
-```
-$ bin/rake alchemy:install:migrations
-$ bin/rake db:migrate
 ```
 
 ## Setup
@@ -50,23 +35,17 @@ Configure a S3 datastore for Dragonfly
 
 require "dragonfly/s3_data_store"
 
-Dragonfly.app(:alchemy_pictures).configure do
-  plugin :imagemagick
-  plugin :svg
+Rails.application.credentials.aws.tap do |aws_config|
+  Dragonfly.app(:alchemy_pictures).configure do
+    plugin :imagemagick
+    plugin :svg
+    secret: Rails.application.credentials.secret_key_base
+    datastore :s3, aws_config
+  end
 
-  datastore :s3,
-    bucket_name: ENV.fetch("ALCHEMY_S3_BUCKET_NAME"),
-    access_key_id: ENV.fetch("ALCHEMY_S3_ACCESS_KEY_ID"),
-    secret_access_key: ENV.fetch("ALCHEMY_S3_SECRET_ACCESS_KEY"),
-    region: ENV.fetch("ALCHEMY_S3_REGION")
-end
-
-Dragonfly.app(:alchemy_attachments).configure do
-  datastore :s3,
-    bucket_name: ENV.fetch("ALCHEMY_S3_BUCKET_NAME"),
-    access_key_id: ENV.fetch("ALCHEMY_S3_ACCESS_KEY_ID"),
-    secret_access_key: ENV.fetch("ALCHEMY_S3_SECRET_ACCESS_KEY"),
-    region: ENV.fetch("ALCHEMY_S3_REGION")
+  Dragonfly.app(:alchemy_attachments).configure do
+    datastore :s3, aws_config
+  end
 end
 ```
 
