@@ -1,3 +1,9 @@
+## v5.2.0
+
+- Fix loading of Alchemy factories
+- Allow Alchemy 6
+- Use config.to_prepare as hook to register classes
+
 ## v5.1.5
 
 - Prevent db race conditions while creating thumbs
