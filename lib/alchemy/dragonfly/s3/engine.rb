@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "alchemy/version"
+
 module Alchemy
   module Dragonfly
     module S3
@@ -11,7 +13,7 @@ module Alchemy
         end
 
         config.to_prepare do
-          files = [
+          [
             "attachment_monkey_patch.rb",
             "picture_monkey_patch.rb",
             "essence_picture_monkey_patch.rb",
@@ -19,6 +21,10 @@ module Alchemy
             file = Alchemy::Dragonfly::S3::Engine.root.join("lib", "alchemy", filename)
             Rails.application.config.cache_classes ? require(file) : load(file)
           end
+        end
+
+        if Gem::Version.new(Alchemy.version) < Gem::Version.new("4.1")
+          paths["app/models"] << root.join("lib", "models")
         end
       end
     end
