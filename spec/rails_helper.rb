@@ -11,7 +11,7 @@ require "alchemy/version"
 if Alchemy.gem_version >= Gem::Version.new("5.2.0")
   require "alchemy/test_support"
 
-  FactoryBot.definition_file_paths.concat(Alchemy::TestSupport.factory_paths)
+  FactoryBot.definition_file_paths.append(Alchemy::TestSupport.factories_path)
   FactoryBot.reload
 else
   require "alchemy/test_support/factories"
