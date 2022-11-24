@@ -16,7 +16,16 @@ RSpec.describe Alchemy::Dragonfly::S3::CreatePictureThumb do
   end
 
   it "creates thumb on picture thumbs collection" do
-    expect { subject }.to change { variant.picture.thumbs.length }.by(1)
+    expect { subject }.to change { variant.picture.thumbs.reload.length }.by(1)
+  end
+
+  context "with an invalid picture" do
+    let(:picture) { FactoryBot.build(:alchemy_picture) }
+
+    it "does not create a thumb" do
+      expect(picture).to receive(:valid?) { false }
+      expect { subject }.not_to change { variant.picture.thumbs.reload.length }
+    end
   end
 
   context "on processing errors" do
