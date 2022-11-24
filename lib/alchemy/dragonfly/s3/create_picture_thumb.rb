@@ -21,7 +21,7 @@ module Alchemy
             # upload the processed image
             image.store(path: uid)
           rescue RuntimeError, Excon::Error => e
-            Rails.logger.warn(e)
+            ErrorTracking.notification_handler.call(e)
             # destroy the thumb if processing or upload fails
             thumb&.destroy
           end
