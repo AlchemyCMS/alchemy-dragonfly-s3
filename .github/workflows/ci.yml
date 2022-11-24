@@ -2,27 +2,29 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   RSpec:
-
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.6']
+        ruby-version:
+          - "2.7"
+          - "3.0"
+          - "3.1"
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 12
-    - name: Run tests
-      run: bundle exec rake
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Run tests
+        run: bundle exec rake
