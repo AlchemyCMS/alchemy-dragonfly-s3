@@ -7,11 +7,14 @@ module Alchemy
         def self.call(variant, signature, uid)
           # create the thumb before uploading
           # to prevent db race conditions
-          thumb = variant.picture.thumbs.create!(
-            picture: variant.picture,
-            signature: signature,
-            uid: uid,
-          )
+          thumb = nil
+          if variant.picture.valid?
+            thumb = Alchemy::PictureThumb.create!(
+              picture: variant.picture,
+              signature: signature,
+              uid: uid,
+            )
+          end
           begin
             # fetch and process the image
             image = variant.image
@@ -20,7 +23,7 @@ module Alchemy
           rescue RuntimeError, Excon::Error => e
             Rails.logger.warn(e)
             # destroy the thumb if processing or upload fails
-            thumb.destroy
+            thumb&.destroy
           end
         end
       end
