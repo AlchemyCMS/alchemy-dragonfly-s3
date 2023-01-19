@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     "README.md",
   ]
 
-  s.add_dependency "alchemy_cms", [">= 5.1.0", "< 6.1"]
+  s.add_dependency "alchemy_cms", [">= 5.1.0", "< 7"]
   s.add_dependency "dragonfly-s3_data_store", "~> 1.3"
 
   s.add_development_dependency "rspec-rails", "~> 4.0"
