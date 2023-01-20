@@ -1,3 +1,8 @@
+## v6.0.0
+
+- Allow Alchemy 6.1
+- Drop support for Alchemy 5.x
+
 ## v5.2.0
 
 - Fix loading of Alchemy factories
