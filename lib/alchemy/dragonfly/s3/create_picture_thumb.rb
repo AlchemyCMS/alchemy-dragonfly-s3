@@ -5,15 +5,13 @@ module Alchemy
     module S3
       class CreatePictureThumb
         def self.call(variant, signature, uid)
+          return if !variant.picture.valid?
+
           # create the thumb before uploading
           # to prevent db race conditions
-          thumb = nil
-          if variant.picture.valid?
-            thumb = Alchemy::PictureThumb.create!(
-              picture: variant.picture,
-              signature: signature,
-              uid: uid,
-            )
+          @thumb = Alchemy::PictureThumb.create_or_find_by!(signature: signature) do |thumb|
+            thumb.picture = variant.picture
+            thumb.uid = uid
           end
           begin
             # fetch and process the image
@@ -23,7 +21,7 @@ module Alchemy
           rescue RuntimeError, Excon::Error => e
             ErrorTracking.notification_handler.call(e)
             # destroy the thumb if processing or upload fails
-            thumb&.destroy
+            @thumb&.destroy
           end
         end
       end
