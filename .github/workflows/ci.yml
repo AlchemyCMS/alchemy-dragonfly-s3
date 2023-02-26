@@ -12,8 +12,6 @@ jobs:
     strategy:
       matrix:
         alchemy_branch:
-          - 6.0-stable
-          - 6.1-stable
           - main
         ruby-version:
           - "2.7"
