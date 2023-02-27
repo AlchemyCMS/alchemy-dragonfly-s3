@@ -1,3 +1,7 @@
+## v5.2.1
+
+- Fix race condition in CreatePictureThumb
+
 ## v5.2.0
 
 - Fix loading of Alchemy factories
