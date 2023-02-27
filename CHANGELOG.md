@@ -1,3 +1,7 @@
+## v6.0.1
+
+- Fix race condition in CreatePictureThumb
+
 ## v6.0.0
 
 - Allow Alchemy 6.1
