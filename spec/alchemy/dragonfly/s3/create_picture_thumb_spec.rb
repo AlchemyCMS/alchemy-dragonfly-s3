@@ -19,6 +19,20 @@ RSpec.describe Alchemy::Dragonfly::S3::CreatePictureThumb do
     expect { subject }.to change { variant.picture.thumbs.reload.length }.by(1)
   end
 
+  context "with a thumb already existing" do
+    let!(:thumb) do
+      Alchemy::PictureThumb.create!(
+        picture: picture,
+        signature: "1234",
+        uid: "/foo/baz",
+      )
+    end
+
+    it "does not create a new thumb" do
+      expect { subject }.to_not change { picture.thumbs.reload.length }
+    end
+  end
+
   context "with an invalid picture" do
     let(:picture) { FactoryBot.build(:alchemy_picture) }
 
