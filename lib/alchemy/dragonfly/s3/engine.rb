@@ -9,7 +9,7 @@ module Alchemy
         config.to_prepare do
           Alchemy::Attachment.url_class = Alchemy::Attachment::S3Url
           Alchemy::Picture.url_class = Alchemy::Picture::S3Url
-          Alchemy::PictureThumb.generator_class = Alchemy::Dragonfly::S3::CreatePictureThumb
+          Alchemy::PictureThumb.storage_class = Alchemy::Dragonfly::S3::Store
         end
       end
     end
