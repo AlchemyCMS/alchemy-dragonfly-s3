@@ -10,10 +10,17 @@ Gem::Specification.new do |s|
   s.version = Alchemy::Dragonfly::S3::VERSION
   s.authors = ["Thomas von Deyen"]
   s.email = ["thomas@vondeyen.com"]
-  s.homepage = "https://alchemy-cms.com"
+  s.homepage = "https://github.com/AlchemyCMS/alchemy-dragonfly-s3"
   s.summary = "AlchemyCMS Dragonfly S3."
   s.description = "AlchemyCMS Integration for the Dragonfly S3 datastore."
   s.license = "MIT"
+
+  s.metadata = {
+    "source_code_uri" => "https://github.com/AlchemyCMS/alchemy-dragonfly-s3",
+    "changelog_uri" => "https://github.com/AlchemyCMS/alchemy-dragonfly-s3/blob/main/CHANGELOG.md",
+    "bug_tracker_uri" => "https://github.com/AlchemyCMS/alchemy-dragonfly-s3/issues",
+    "github_repo" => "https://github.com/AlchemyCMS/alchemy-dragonfly-s3",
+  }
 
   s.files = Dir[
     "app/**/*",
