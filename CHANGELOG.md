@@ -1,5 +1,13 @@
 # Changelog
 
+## [v7.0.0](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/tree/v7.0.0) (2023-03-31)
+
+[Full Changelog](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/compare/v6.0.1...v7.0.0)
+
+**Merged pull requests:**
+
+- Add picture thumb store [\#21](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/pull/21) ([tvdeyen](https://github.com/tvdeyen))
+
 ## [v6.0.1](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/tree/v6.0.1) (2023-02-27)
 
 [Full Changelog](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/compare/v5.2.1...v6.0.1)
