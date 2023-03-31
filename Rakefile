@@ -37,3 +37,11 @@ task :test_setup do
     exit($?.exitstatus) unless $?.success?
   end
 end
+
+require "github_changelog_generator/task"
+require "alchemy/dragonfly/s3/version"
+GitHubChangelogGenerator::RakeTask.new(:changelog) do |config|
+  config.user = "AlchemyCMS"
+  config.project = "alchemy-dragonfly-s3"
+  config.future_release = "v#{Alchemy::Dragonfly::S3::VERSION}"
+end
