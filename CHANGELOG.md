@@ -1,5 +1,13 @@
 # Changelog
 
+## [v7.0.1](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/tree/v7.0.1) (2025-01-24)
+
+[Full Changelog](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/compare/v7.0.0...v7.0.1)
+
+**Merged pull requests:**
+
+- Update test matrix [\#23](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/pull/23) ([tvdeyen](https://github.com/tvdeyen))
+
 ## [v7.0.0](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/tree/v7.0.0) (2023-03-31)
 
 [Full Changelog](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/compare/v6.0.1...v7.0.0)
