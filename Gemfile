@@ -6,10 +6,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # development dependencies will be added by default to the :development group.
 gemspec
 
-alchemy_branch = ENV.fetch("ALCHEMY_BRANCH", "main")
+alchemy_branch = ENV.fetch("ALCHEMY_BRANCH", "7.4-stable")
 gem "alchemy_cms", github: "AlchemyCMS/alchemy_cms", branch: alchemy_branch
-gem "alchemy-devise", github: "AlchemyCMS/alchemy-devise", branch: alchemy_branch
-gem "sqlite3", "~> 1.3"
+gem "alchemy-devise", github: "AlchemyCMS/alchemy-devise", branch: "main"
+gem "sqlite3", "~> 2.0"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
