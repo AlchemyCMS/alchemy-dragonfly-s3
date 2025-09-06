@@ -18,3 +18,8 @@ gem "sqlite3", "~> 2.0"
 
 # To use a debugger
 gem "pry-byebug", group: [:development, :test]
+
+group :lint do
+  gem "rubocop", require: false
+  gem "standard", "~> 1.50", require: false
+end
