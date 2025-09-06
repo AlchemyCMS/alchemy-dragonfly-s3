@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # development dependencies will be added by default to the :development group.
 gemspec
 
-alchemy_branch = ENV.fetch("ALCHEMY_BRANCH", "7.4-stable")
+alchemy_branch = ENV.fetch("ALCHEMY_BRANCH", "main")
 gem "alchemy_cms", github: "AlchemyCMS/alchemy_cms", branch: alchemy_branch
 gem "alchemy-devise", github: "AlchemyCMS/alchemy-devise", branch: "main"
 gem "sqlite3", "~> 2.0"
@@ -23,3 +23,5 @@ group :lint do
   gem "rubocop", require: false
   gem "standard", "~> 1.50", require: false
 end
+
+gem "sprockets-rails", "~> 3.5"

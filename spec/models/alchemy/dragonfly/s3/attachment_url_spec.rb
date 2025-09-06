@@ -2,12 +2,12 @@
 
 require "rails_helper"
 
-RSpec.describe Alchemy::Attachment::S3Url do
+RSpec.describe Alchemy::Dragonfly::S3::AttachmentUrl do
   let(:attachment) { FactoryBot.create(:alchemy_attachment) }
 
   subject { described_class.new(attachment).call }
 
   it "returns the remote url to the file" do
-    is_expected.to match(/http\:\/\/test-bucket.s3.amazonaws.com\/.+\/image\.png/)
+    is_expected.to match(/http:\/\/test-bucket.s3.amazonaws.com\/.+\/image\.png/)
   end
 end
