@@ -1,5 +1,13 @@
 # Changelog
 
+## [v8.0.0](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/tree/v8.0.0) (2025-11-19)
+
+[Full Changelog](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/compare/v7.0.1...v8.0.0)
+
+**Merged pull requests:**
+
+- Adjust to Alchemy 8.0 Dragonfly Storage Adapter [\#25](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/pull/25) ([tvdeyen](https://github.com/tvdeyen))
+
 ## [v7.0.1](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/tree/v7.0.1) (2025-01-24)
 
 [Full Changelog](https://github.com/AlchemyCMS/alchemy-dragonfly-s3/compare/v7.0.0...v7.0.1)
