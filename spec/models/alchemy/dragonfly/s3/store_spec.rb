@@ -3,9 +3,8 @@
 require "rails_helper"
 
 RSpec.describe Alchemy::Dragonfly::S3::Store do
-  let(:image) { File.new(File.expand_path("../../../fixtures/image.png", __dir__)) }
-  let(:picture) { FactoryBot.create(:alchemy_picture, image_file: image) }
-  let!(:variant) { Alchemy::PictureVariant.new(picture, { size: "1x1" }) }
+  let(:picture) { FactoryBot.create(:alchemy_picture) }
+  let!(:variant) { Alchemy::PictureVariant.new(picture, {size: "1x1"}) }
 
   before do
     Fog.mock!

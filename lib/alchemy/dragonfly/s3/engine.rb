@@ -7,9 +7,10 @@ module Alchemy
         engine_name "alchemy_dragonfly_s3"
 
         config.to_prepare do
-          Alchemy::Attachment.url_class = Alchemy::Attachment::S3Url
-          Alchemy::Picture.url_class = Alchemy::Picture::S3Url
-          Alchemy::PictureThumb.storage_class = Alchemy::Dragonfly::S3::Store
+          # Configure Alchemy to use our S3Url classes for generating urls.
+          StorageAdapter::Dragonfly.attachment_url_class = AttachmentUrl
+          StorageAdapter::Dragonfly.picture_url_class = PictureUrl
+          PictureThumb.storage_class = Store
         end
       end
     end
